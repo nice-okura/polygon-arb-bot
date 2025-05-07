@@ -1,0 +1,27 @@
+# RPC エンドポイント
+polygon_rpc: "https://polygon-rpc.com"
+flashbots_rpc: "https://rpc-polygon.flashbots.net"
+
+# The Graph Gateway を使ったサブグラフ URL
+# GRAPH_API_KEY と各サブグラフ ID は .env で定義します
+uniswap_v3_subgraph: "https://gateway.thegraph.com/api/${GRAPH_API_KEY}/subgraphs/id/${UNISWAP_SUBGRAPH_ID}"
+quickswap_v3_subgraph: "https://gateway.thegraph.com/api/${GRAPH_API_KEY}/subgraphs/id/${QUICKSWAP_SUBGRAPH_ID}"
+sushiswap_v3_subgraph: "https://gateway.thegraph.com/api/${GRAPH_API_KEY}/subgraphs/id/${SUSHISWAP_SUBGRAPH_ID}"
+balancer_subgraph:     "https://gateway.thegraph.com/api/${GRAPH_API_KEY}/subgraphs/id/${BALANCER_SUBGRAPH_ID}"
+
+# Curve は普通の REST API なのでそのまま
+curve_pools_api:       "https://api.curve.fi/api/getPools/polygon/main"
+
+# トレードパラメータ
+pairs:
+  - base: "0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619"   # WETH
+    quote: "0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174"  # USDC
+
+min_spread_bps: 10        # 0.10 %
+gas_limit: 300000
+
+# 初期資本(USDC 換算)
+capital_usdc: 60
+
+# 許容ドローダウン(%) 
+max_drawdown_pct: 15
